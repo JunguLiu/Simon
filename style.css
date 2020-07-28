@@ -1,0 +1,127 @@
+.TL,
+.TR,
+.BL,
+.BR {
+  width: 250px;
+  height: 250px;
+  border: black solid 10px;
+}
+
+.TL {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 500px;
+  border-radius: 250px 0 0 0;
+  background: darkgreen;
+}
+.TR {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 750px;
+  border-radius: 0 250px 0 0;
+  background: darkred;
+}
+
+.BL {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 500px;
+  border-radius: 0 0 0 250px;
+  background: goldenrod;
+}
+.BR {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 750px;
+  border-radius: 0 0 250px 0;
+  background: darkblue;
+}
+
+.IC {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 2fr 1fr 1fr 1fr;
+  position: absolute;
+  text-align: center;
+  margin-top: 225px;
+  margin-left: 625px;
+  width: 250px;
+  height: 250px;
+  background-color: grey;
+  border-radius: 50%;
+  border: black solid 10px;
+}
+
+.Title {
+  margin-top: 40px;
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 40px;
+}
+
+.Bar {
+  grid-row: 2;
+  grid-column: 1;
+  width: 250px;
+  height: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.Start {
+  border-radius: 50%;
+  height: 36px;
+  width: 70px;
+  color: white;
+  background-color: darkred;
+  margin-top: 20px;
+  padding: 0;
+}
+.Power,
+.Strict {
+  margin-top: 30px;
+  height: 14px;
+  width: 14px;
+}
+.Power {
+  margin-left: 30px;
+}
+.Strict {
+  margin-right: 30px;
+}
+
+.Text1 {
+  grid-row: 3;
+  grid-column: 1;
+  padding: 0;
+}
+#p {
+  display: inline-block;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+#s {
+  display: inline-block;
+  margin-left: 85px;
+  margin-right: 10px;
+}
+.Turn {
+  grid-row: 4;
+  grid-column: 1;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  height: 30px;
+  background-color: black;
+  color: red;
+  line-height: 30px;
+}
+
+.Text2 {
+  grid-row: 5;
+  grid-column: 1;
+
+  margin: auto;
+}
