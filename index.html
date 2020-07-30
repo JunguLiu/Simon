@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="style.css" />
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+    var arrLang = new Array();
+    arrLang['en'] = new Array();
+    arrLang['cn'] = new Array();
+ 
+    // English content
+    arrLang['en']['title'] = 'Simon';
+    arrLang['en']['start'] = 'Start';
+    arrLang['en']['power'] = 'Power';
+    arrLang['en']['strict'] = 'Strict';
+    arrLang['en']['turn'] = 'Turn';
+
+    // Chinese content 
+  
+    arrLang['cn']['title'] = '西蒙';
+    arrLang['cn']['start'] = '开始';
+    arrLang['cn']['power'] = '电源';
+    arrLang['cn']['strict'] = '困难';
+    arrLang['cn']['turn'] = '轮次';
+   
+
+    // Process translation
+    $(function() {
+      $('.translate').click(function() {
+        var lang = $(this).attr('id');
+
+        $('.lang').each(function(index, item) {
+          $(this).text(arrLang[lang][$(this).attr('key')]);
+        });
+      });
+    });
+  </script>
+    <audio id="clip1">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+    </audio>
+    <audio id="clip2">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+    </audio>
+    <audio id="clip3">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+    </audio>
+    <audio id="clip4">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+    </audio>
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <button class="translate" id='en'>English</button>
+    <button class="translate" id='cn'>简体中文</button>
+
+
+
+    <div class="Container">
+    <div class="TL"></div>
+    <div class="TR"></div>
+    <div class="BL"></div>
+    <div class="BR"></div>
+    <div class="IC">
+      <div class="Title lang" key='title'>Simon</div>
+      <div class="Bar">
+        <input type="checkbox" class="Power"></input>
+        <button class="Start lang" key='start'>Start</button>
+        <input type="checkbox" class="Strict"></input>
+      </div>
+      <div class="Text1">
+        <div id="p" class="lang" key='power'>Power</div>
+        <div id="s" class="lang" key='strict'>Strict</div>
+      </div>
+      <div class="Turn"></div>
+      <div class="Text2 lang" key='turn'>Turn</div>
+    </div>
+  </div>
+  </body>
+  
+ 
+</html>
