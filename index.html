@@ -19,6 +19,8 @@
     arrLang['en']['power'] = 'Power';
     arrLang['en']['strict'] = 'Strict';
     arrLang['en']['turn'] = 'Turn';
+    arrLang['en']['rule1'] = 'Rule';
+    arrLang['en']['rule2'] = 'The device has four colored buttons, each producing a particular tone when it is pressed or activated by the device. A round in the game consists of the device lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of buttons to be pressed increases.';
 
     // Chinese content 
   
@@ -27,7 +29,8 @@
     arrLang['cn']['power'] = '电源';
     arrLang['cn']['strict'] = '困难';
     arrLang['cn']['turn'] = '轮次';
-   
+    arrLang['cn']['rule1'] = "规则"
+    arrLang['cn']['rule2'] = '该设备有四个彩色按钮，每个按钮在被按下或被激活时都会产生特定的声音。 游戏中，设备以随机顺序点亮一个或多个按钮，然后玩家必须通过按下按钮来重现该顺序。 随着游戏的进行，点亮的按钮数量增加。';
 
     // Process translation
     $(function() {
@@ -57,9 +60,8 @@
   <body>
     <button class="translate" id='en'>English</button>
     <button class="translate" id='cn'>简体中文</button>
-
-
-
+    <div class="Rule lang" key='rule1' style="font-size: 45px;">Rule</div>
+    <div class='Rule lang' key='rule2'>The device has four colored buttons, each producing a particular tone when it is pressed or activated by the device. A round in the game consists of the device lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of buttons to be pressed increases.</div>
     <div class="Container">
     <div class="TL"></div>
     <div class="TR"></div>

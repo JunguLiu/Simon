@@ -1,6 +1,6 @@
 html {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  margin: 0;
 }
 body {
   position: relative;
@@ -18,8 +18,8 @@ body {
   height: 500px;
   width: 500px;
   position: relative;
-  top: 20%;
-  left: 20%;
+  top: 4%;
+  left: 31%;
 }
 .TL,
 .TR,
@@ -152,6 +152,16 @@ body {
   background-color: black;
   color: red;
   line-height: 30px;
+}
+
+.Rule {
+  font-family: "Times New Roman";
+  font-size: 30px;
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
 }
 
 .Title,
