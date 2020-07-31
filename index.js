@@ -1,3 +1,41 @@
+//language
+let arrLang = new Array();
+arrLang["en"] = new Array();
+arrLang["cn"] = new Array();
+
+// English content
+arrLang["en"]["title"] = "Simon";
+arrLang["en"]["start"] = "Start";
+arrLang["en"]["power"] = "Power";
+arrLang["en"]["strict"] = "Strict";
+arrLang["en"]["turn"] = "Turn";
+arrLang["en"]["rule1"] = "Rule";
+arrLang["en"]["rule2"] =
+  "The device has four colored buttons, each producing a particular tone when it is pressed or activated by the device. A round in the game consists of the device lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of buttons to be pressed increases.";
+
+// Chinese content
+
+arrLang["cn"]["title"] = "西蒙";
+arrLang["cn"]["start"] = "开始";
+arrLang["cn"]["power"] = "电源";
+arrLang["cn"]["strict"] = "困难";
+arrLang["cn"]["turn"] = "轮次";
+arrLang["cn"]["rule1"] = "规则";
+arrLang["cn"]["rule2"] =
+  "该设备有四个彩色按钮，每个按钮在被按下或被激活时都会产生特定的声音。 游戏中，设备以随机顺序点亮一个或多个按钮，然后玩家必须通过按下按钮来重现该顺序。 随着游戏的进行，点亮的按钮数量增加。";
+
+// Process translation
+$(function () {
+  $(".translate").click(function () {
+    var lang = $(this).attr("id");
+
+    $(".lang").each(function (index, item) {
+      $(this).text(arrLang[lang][$(this).attr("key")]);
+    });
+  });
+});
+
+//simon
 let order = [];
 let playerOrder;
 let flash;
@@ -18,7 +56,7 @@ const powerBtn = document.querySelector(".Power");
 const startBtn = document.querySelector(".Start");
 const strictBtn = document.querySelector(".Strict");
 const turnCounter = document.querySelector(".Turn");
-
+const rickImg = document.querySelector("img.Rick");
 //strick mode
 strictBtn.addEventListener("click", (event) => {
   if (strictBtn.checked == true) {
@@ -44,6 +82,7 @@ powerBtn.addEventListener("click", (event) => {
 //start button
 startBtn.addEventListener("click", (event) => {
   if (on) {
+    document.getElementById("clip6").play();
     play();
   }
 });
@@ -58,7 +97,7 @@ function play() {
   turnCounter.innerHTML = 1;
   good = true;
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     order.push(Math.floor(Math.random() * 4) + 1);
   }
   console.log(order);
@@ -191,13 +230,16 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 5 && good) {
+  if (playerOrder.length == 10 && good) {
     winGame();
   }
 
   if (good == false) {
+    document.getElementById("clip7").play();
     flashColor();
+
     turnCounter.innerHTML = "NO!";
+
     setTimeout(() => {
       turnCounter.innerHTML = turn;
       clearColor();
@@ -229,4 +271,9 @@ function winGame() {
   turnCounter.innerHTML = "WIN!";
   on = false;
   win = true;
+  document.getElementById("clip5").play();
 }
+
+rickImg.addEventListener("click", () => {
+  document.getElementById("clip8").play();
+});

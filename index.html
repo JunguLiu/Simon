@@ -6,43 +6,8 @@
     <title>Simon Game</title>
     <link rel="stylesheet" href="style.css" />
 
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript">
-    var arrLang = new Array();
-    arrLang['en'] = new Array();
-    arrLang['cn'] = new Array();
- 
-    // English content
-    arrLang['en']['title'] = 'Simon';
-    arrLang['en']['start'] = 'Start';
-    arrLang['en']['power'] = 'Power';
-    arrLang['en']['strict'] = 'Strict';
-    arrLang['en']['turn'] = 'Turn';
-    arrLang['en']['rule1'] = 'Rule';
-    arrLang['en']['rule2'] = 'The device has four colored buttons, each producing a particular tone when it is pressed or activated by the device. A round in the game consists of the device lighting up one or more buttons in a random order, after which the player must reproduce that order by pressing the buttons. As the game progresses, the number of buttons to be pressed increases.';
-
-    // Chinese content 
-  
-    arrLang['cn']['title'] = '西蒙';
-    arrLang['cn']['start'] = '开始';
-    arrLang['cn']['power'] = '电源';
-    arrLang['cn']['strict'] = '困难';
-    arrLang['cn']['turn'] = '轮次';
-    arrLang['cn']['rule1'] = "规则"
-    arrLang['cn']['rule2'] = '该设备有四个彩色按钮，每个按钮在被按下或被激活时都会产生特定的声音。 游戏中，设备以随机顺序点亮一个或多个按钮，然后玩家必须通过按下按钮来重现该顺序。 随着游戏的进行，点亮的按钮数量增加。';
-
-    // Process translation
-    $(function() {
-      $('.translate').click(function() {
-        var lang = $(this).attr('id');
-
-        $('.lang').each(function(index, item) {
-          $(this).text(arrLang[lang][$(this).attr('key')]);
-        });
-      });
-    });
-  </script>
+    
     <audio id="clip1">
       <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
     </audio>
@@ -54,6 +19,19 @@
     </audio>
     <audio id="clip4">
       <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+    </audio>
+    <audio id='clip5'>
+      <source src="sould/wblb.mp3">
+    </audio>
+
+    <audio id='clip6'>
+      <source src="sould/lsr.wav">
+    </audio>
+    <audio id='clip7'>
+      <source src="sould/uok.mp3">
+    </audio>
+    <audio id= 'clip8'>
+      <source src="sould/pickle_rick.mp3">
     </audio>
     <script defer src="index.js"></script>
   </head>
@@ -81,8 +59,8 @@
       <div class="Turn"></div>
       <div class="Text2 lang" key='turn'>Turn</div>
     </div>
+
   </div>
+      <img class='Rick' src="img/3.jpg" >
   </body>
-  
- 
 </html>
