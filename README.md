@@ -11,3 +11,9 @@ HTML <br/>
 CSS <br/>
 JavaScript <br/>
 JQuery <br/>
+
+## Getting Started: 
+https://junguliu.github.io/Simon/
+
+## Next Steps:
+Better UI
