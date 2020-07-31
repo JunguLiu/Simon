@@ -176,7 +176,72 @@ body {
 
 img.Rick {
   position: absolute;
-  top: 65%;
+  top: 4%;
   left: 85%;
   max-width: 15%;
+}
+img.Man1 {
+  position: absolute;
+  left: -1%;
+  top: 69%;
+}
+img.Man2 {
+  position: absolute;
+  left: 10%;
+  top: 69%;
+}
+
+img.Man3 {
+  position: absolute;
+  left: 71%;
+  top: 69%;
+}
+
+img.Man4 {
+  position: absolute;
+  left: 82%;
+  top: 69%;
+}
+
+img.Man5 {
+  position: absolute;
+  left: -1%;
+  top: 42%;
+}
+img.Man6 {
+  position: absolute;
+  left: 10%;
+  top: 42%;
+}
+img.Man7 {
+  position: absolute;
+  left: 71%;
+  top: 42%;
+}
+img.Man8 {
+  position: absolute;
+  left: 82%;
+  top: 42%;
+}
+img.Man9 {
+  position: absolute;
+  left: 5%;
+  top: 57%;
+}
+img.Man10 {
+  position: absolute;
+  left: 76%;
+  top: 57%;
+}
+img.Man1,
+img.Man2,
+img.Man3,
+img.Man4,
+img.Man5,
+img.Man6,
+img.Man7,
+img.Man8,
+img.Man9,
+img.Man10 {
+  display: none;
 }

@@ -36,6 +36,7 @@ $(function () {
 });
 
 //simon
+
 let order = [];
 let playerOrder;
 let flash;
@@ -81,7 +82,7 @@ powerBtn.addEventListener("click", (event) => {
 
 //start button
 startBtn.addEventListener("click", (event) => {
-  if (on) {
+  if (on || win) {
     document.getElementById("clip6").play();
     play();
   }
@@ -96,6 +97,9 @@ function play() {
   turn = 1;
   turnCounter.innerHTML = 1;
   good = true;
+  for (let i = 1; i <= 10; i++) {
+    document.querySelector(`.Man${i}`).style.display = "none";
+  }
 
   for (let i = 0; i < 10; i++) {
     order.push(Math.floor(Math.random() * 4) + 1);
@@ -258,6 +262,8 @@ function check() {
 
   if (turn == playerOrder.length && good && !win) {
     turn++;
+    document.querySelector(`.Man${turn - 1}`).style.display = "block";
+    document.getElementById("clip9").play();
     playerOrder = [];
     compTurn = true;
     flash = 0;
@@ -267,6 +273,7 @@ function check() {
 }
 
 function winGame() {
+  document.querySelector(".Man10").style.display = "block";
   flashColor();
   turnCounter.innerHTML = "WIN!";
   on = false;
