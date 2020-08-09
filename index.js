@@ -24,13 +24,23 @@ arrLang["cn"]["rule1"] = "规则";
 arrLang["cn"]["rule2"] =
   "该设备有四个彩色按钮，每个按钮在被按下或被激活时都会产生特定的声音。 游戏中，设备以随机顺序点亮一个或多个按钮，然后玩家必须通过按下按钮来重现该顺序。 随着游戏的进行，点亮的按钮数量增加。";
 
-// Process translation
-$(function () {
-  $(".translate").click(function () {
-    var lang = $(this).attr("id");
+function ready(fn) {
+  if (document.readyState !== 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
 
-    $(".lang").each(function (index, item) {
-      $(this).text(arrLang[lang][$(this).attr("key")]);
+// Process translation
+ready(function () {
+  document.querySelectorAll(".translate").forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      var lang = event.currentTarget.getAttribute("id");
+  
+      document.querySelectorAll(".lang").forEach(function (element) {
+        element.textContent = arrLang[lang][element.getAttribute("key")];
+      });
     });
   });
 });

@@ -10,7 +10,6 @@ Win 10 Turns.
 HTML <br/>
 CSS <br/>
 JavaScript <br/>
-JQuery <br/>
 
 ## Getting Started: 
 https://junguliu.github.io/Simon/
