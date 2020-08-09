@@ -167,6 +167,10 @@ body {
   margin-bottom: 30px;
 }
 
+.Rule[key='rule1'] {
+  font-size: 45px;
+}
+
 .Title,
 .Bar,
 .Text1,
