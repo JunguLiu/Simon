@@ -178,57 +178,23 @@ function flashColor() {
   br.style.backgroundColor = "lightskyblue";
 }
 
-tl.addEventListener("click", (event) => {
-  if (on) {
-    playerOrder.push(1);
-    check();
-    one();
-    if (!win) {
-      setTimeout(() => {
-        clearColor();
-      }, 300);
-    }
-  }
-});
+function turn(event) {
+  if (!on) return;
 
-tr.addEventListener("click", (event) => {
-  if (on) {
-    playerOrder.push(2);
-    check();
-    two();
-    if (!win) {
-      setTimeout(() => {
-        clearColor();
-      }, 300);
-    }
-  }
-});
+  playerOrder.push(event.target.id); 
+  check(); 
 
-bl.addEventListener("click", (event) => {
-  if (on) {
-    playerOrder.push(3);
-    check();
-    three();
-    if (!win) {
-      setTimeout(() => {
-        clearColor();
-      }, 300);
-    }
-  }
-});
+  if (event.target.id === 1) one();
+  if (event.target.id === 2) two();
+  if (event.target.id === 3) three();
+  if (event.target.id === 4) four();
+  if (!win) setTimeout(clearColor, 300); 
+}
 
-br.addEventListener("click", (event) => {
-  if (on) {
-    playerOrder.push(4);
-    check();
-    four();
-    if (!win) {
-      setTimeout(() => {
-        clearColor();
-      }, 300);
-    }
-  }
-});
+tl.addEventListener("click", turn);
+tr.addEventListener("click", turn);
+bl.addEventListener("click", turn);
+br.addEventListener("click", turn);
 
 function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
